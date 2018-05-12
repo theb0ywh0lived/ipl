@@ -1,0 +1,220 @@
+{
+  "axes": [
+    {
+      "scale": "x",
+      "type": "x"
+    },
+    {
+      "scale": "y",
+      "type": "y"
+    }
+  ],
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {
+          "col": "data",
+          "idx": ".",
+          "val": 2377
+        },
+        {
+          "col": "data",
+          "idx": ",",
+          "val": 1703
+        },
+        {
+          "col": "data",
+          "idx": "CSK",
+          "val": 1270
+        },
+        {
+          "col": "data",
+          "idx": ":",
+          "val": 1158
+        },
+        {
+          "col": "data",
+          "idx": "#CSK",
+          "val": 811
+        },
+        {
+          "col": "data",
+          "idx": "the",
+          "val": 790
+        },
+        {
+          "col": "data",
+          "idx": "RT",
+          "val": 673
+        },
+        {
+          "col": "data",
+          "idx": "\u2026",
+          "val": 635
+        },
+        {
+          "col": "data",
+          "idx": "to",
+          "val": 625
+        },
+        {
+          "col": "data",
+          "idx": "and",
+          "val": 585
+        },
+        {
+          "col": "data",
+          "idx": "#RRvCSK",
+          "val": 570
+        },
+        {
+          "col": "data",
+          "idx": "\u0bcd",
+          "val": 508
+        },
+        {
+          "col": "data",
+          "idx": "!",
+          "val": 470
+        },
+        {
+          "col": "data",
+          "idx": "S",
+          "val": 466
+        },
+        {
+          "col": "data",
+          "idx": "#LloydHappinessMeter",
+          "val": 426
+        },
+        {
+          "col": "data",
+          "idx": "-",
+          "val": 425
+        },
+        {
+          "col": "data",
+          "idx": "#KhushiyanOnKaro",
+          "val": 369
+        },
+        {
+          "col": "data",
+          "idx": "bat",
+          "val": 294
+        },
+        {
+          "col": "data",
+          "idx": "in",
+          "val": 293
+        },
+        {
+          "col": "data",
+          "idx": "a",
+          "val": 277
+        }
+      ]
+    },
+    {
+      "name": "stats",
+      "source": "table",
+      "transform": [
+        {
+          "keys": [
+            "data.idx"
+          ],
+          "type": "facet"
+        },
+        {
+          "type": "stats",
+          "value": "data.val"
+        }
+      ]
+    }
+  ],
+  "height": 500,
+  "legends": [],
+  "marks": [
+    {
+      "from": {
+        "data": "table",
+        "transform": [
+          {
+            "keys": [
+              "data.col"
+            ],
+            "type": "facet"
+          },
+          {
+            "height": "data.val",
+            "point": "data.idx",
+            "type": "stack"
+          }
+        ]
+      },
+      "marks": [
+        {
+          "properties": {
+            "enter": {
+              "fill": {
+                "field": "data.col",
+                "scale": "color"
+              },
+              "width": {
+                "band": true,
+                "offset": -1,
+                "scale": "x"
+              },
+              "x": {
+                "field": "data.idx",
+                "scale": "x"
+              },
+              "y": {
+                "field": "y",
+                "scale": "y"
+              },
+              "y2": {
+                "field": "y2",
+                "scale": "y"
+              }
+            }
+          },
+          "type": "rect"
+        }
+      ],
+      "type": "group"
+    }
+  ],
+  "padding": "auto",
+  "scales": [
+    {
+      "domain": {
+        "data": "table",
+        "field": "data.idx"
+      },
+      "name": "x",
+      "range": "width",
+      "type": "ordinal",
+      "zero": false
+    },
+    {
+      "domain": {
+        "data": "stats",
+        "field": "sum"
+      },
+      "name": "y",
+      "nice": true,
+      "range": "height"
+    },
+    {
+      "domain": {
+        "data": "table",
+        "field": "data.col"
+      },
+      "name": "color",
+      "range": "category20",
+      "type": "ordinal"
+    }
+  ],
+  "width": 960
+}
